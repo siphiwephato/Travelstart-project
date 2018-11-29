@@ -1,0 +1,48 @@
+<h1>{{userClaims.UserId}}   </h1>
+   
+   <link rel="icon" type="image/x-icon" href="favicon.ico">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
+  <form class="col s12 white" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
+      <input type="hidden" name="UserId" #UserId="ngModel" [(ngModel)]="user.UserId" >
+    <div class="row">
+      <div class="input-field col s6">
+        <input class="validate" type="text" name="users_user_id" #users_user_id="ngModel" [(ngModel)]="user.UserName" required>
+        <label data-error="Required field!">
+users_user_id</label>
+      </div>
+      <div class="input-field col s6">
+        <input class="validate" type="text" name="card_no" #card_no="ngModel" [(ngModel)]="user.Password" >
+        <label >card_no</label>
+      </div>
+    </div>
+    <div class="row">
+     
+      <div class="input-field col s12">
+        <input class="validate" type="text" name="account_no" #account_no="ngModel" [(ngModel)]="user.Email" >
+        <label data-error="Invalid email!">account_no</label>
+      </div>
+      
+
+      <div class="input-field col s12">
+        <input class="validate" type="text" name="transaction_date" #transaction_date="ngModel" [(ngModel)]="user.Email" [pattern]="emailPattern">
+        <label data-error="Invalid email!">transaction_date</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input type="text" name="amount" value="{{cars}}">
+        <label>amount</label>
+      </div>
+    
+     
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <button class="btn-large btn-submit" type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+
+ 

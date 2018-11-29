@@ -1,0 +1,257 @@
+
+
+ <div id="wrapper">   <h2 id="wrapper"> Name : {{userClaims.FirstName}}<br> Surname: {{userClaims.LastName}}<br>Email : {{userClaims.Email}}{{userClaims.UserId}} <br>Acount Number : {{userClaims.account_no}} <br>card Number : {{userClaims.card_no}} </h2></div>
+
+<form #regForm="ngForm">
+<div class="container" *ngIf="editCustomer">
+  <h3>{{FormHeader}}</h3>
+  <table class="table table-condensed">
+    <tbody>
+      <tr>
+        <td>First Name</td>
+        <td><input type="text" name="FisrtName" [(ngModel)]='FisrtName' ></td>
+        </tr>
+        <tr>
+        <td>Last Name</td>
+        <td><input type="text" name="LastName" [(ngModel)]='LastName'></td>
+        </tr>
+        <tr>
+        <td> Type Of meal</td>
+        <td><input type="text" name="typeOfMeal" [(ngModel)]='typeOfMeal'></td>
+        </tr>
+        <tr>
+            <td> Email</td>
+            <td><input type="text" name="email" [(ngModel)]='email'></td>
+            </tr>
+            <tr>
+                <td> Country code</td>
+                <td><input type="text" name="countryCode" [(ngModel)]='countryCode'></td>
+                </tr>
+                <tr>
+                    <td> Number</td>
+                    <td><input type="text" name="number" [(ngModel)]='number'></td>
+                    </tr>
+                    <tr>
+        <td><input type="hidden" name="traveller_id" [(ngModel)]='traveller_id'></td>
+        <td><input type="button" value="Save" (click)="Save(regForm)"></td>
+
+      </tr>
+    </tbody>
+  </table>
+ </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  
+
+
+
+
+
+
+
+
+
+
+  <body>
+      <div id="wrapper">
+       <h1> Your bookings</h1>
+       
+       <table id="keywords" cellspacing="0" cellpadding="0">
+         <thead>
+           <tr>
+             <th><span>From Location</span></th>
+             <th><span>To Location</span></th>
+             <th><span>Number Of Travellers</span></th>
+             <th><span>date</span></th>
+             <th><span>Price</span></th>
+            
+           </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let e of bookinglist  ">
+            
+             
+              <td> {{e.from_location}}</td>
+        <td>{{e.to_location}}</td>
+        <td>{{e.numtravellers}}</td>
+        <td>{{e.date}}</td>
+        <td>{{e.price}}</td>
+        
+            
+  
+           </tr>
+          
+           
+          
+         </tbody>
+       </table>
+      </div> 
+     </body>
+
+
+    
+       
+
+
+  <body>
+
+
+
+    <div id="wrapper">
+     <h1> Your travellers</h1>
+     <h3><input  class="w3-button w3-teal" width="300px" type="submit" value="add new Traveller" (click)="ShowRegForm(e)"></h3>
+
+     
+     <table id="keywords" cellspacing="0" cellpadding="0">
+
+       <thead>
+         <tr>
+           <th><span>First Name</span></th>
+           <th><span>Last name</span></th>
+           <th><span>Type Of Meal</span></th>
+           <th><span>Email</span></th>
+           <th><span>Country Code</span></th>
+           <th><span>Number</span></th>
+           <th><span>Edit</span></th>
+           <th><span>Delete</span></th>
+         </tr>
+       </thead>
+       <tbody>
+
+         <tr *ngFor="let e of employeelist">
+          
+            
+            <td>{{e.FisrtName}}</td>
+            <td>{{e.LastName}}</td>
+            <td>{{e.typeOfMeal}}</td>
+            <td>{{e.email}}</td>
+            <td>{{e.countryCode}}</td>
+            <td>{{e.number}}</td>
+           <td><input  class="w3-button w3-teal" type="submit" value="edit" (click)="ShowRegForm(e)"></td>
+           <td><input  class="w3-button w3-teal"  type="submit" value="delete" (click)="ShowRegFormForDelete(e)"></td>
+
+         </tr>
+        
+         
+        
+       </tbody>
+     </table>
+
+
+     
+    </div>
+    
+    
+
+
+   </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

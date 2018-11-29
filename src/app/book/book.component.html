@@ -1,0 +1,54 @@
+<h2 class="hue"> Add Traveller </h2>
+   
+   <link rel="icon" type="image/x-icon" href="favicon.ico">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
+  <form class="col s12 white" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
+      <input type="hidden" name="UserId" #UserId="ngModel" [(ngModel)]="user.UserId" >
+    <div class="row">
+      <div class="input-field col s6">
+        <input class="validate" type="text" name="FisrtName" #FisrtName="ngModel" [(ngModel)]="user.UserName" required>
+        <label data-error="Required field!">FisrtName</label>
+      </div>
+      <div class="input-field col s6">
+        <input class="validate" type="text" name="LastName" #LastName="ngModel" [(ngModel)]="user.LastName" >
+        <label >Lastname</label>
+      </div>
+    </div>
+    <div class="row">
+     
+      <div class="input-field col s12">
+        <input class="validate" type="text" name="typeOfMeal" #typeOfMeal="ngModel" [(ngModel)]="user.typeOfMeal" >
+        <label >type Of Meal</label>
+      </div>
+      
+
+      <div class="input-field col s12">
+        <input class="validate" type="text" name="email" #email="ngModel" [(ngModel)]="user.Email">
+        <label data-error="Invalid email!">Email</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input type="text" name="countryCode" #countryCode="ngModel" [(ngModel)]="user.FirstName">
+        <label>country Code</label>
+      </div>
+      <div class="input-field col s6">
+        <input type="text" name="number" #number="ngModel" [(ngModel)]="user.number">
+        <label>Phone number</label>
+      </div>
+     
+      <div class="input-field col s6">
+        <input type="text" name="users_userId"  #users_userId="ngModel" [(ngModel)]="user.users_userId" readonly>
+      </div>
+     
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <button class="btn-large btn-submit" type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+
+ 

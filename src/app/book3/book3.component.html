@@ -1,0 +1,56 @@
+<div>
+  <h1> Add Traveller 2 {{userClaims.UserId}} </h1>
+   
+   <link rel="icon" type="image/x-icon" href="favicon.ico">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  
+  <form class="col s12 white" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
+      <input type="hidden" name="traveller_id" #UserId="ngModel" [(ngModel)]="user.UserId" >
+    <div class="row">
+      <div class="input-field col s6">
+        <input class="validate" type="text" name="FisrtName" #FisrtName="ngModel" [(ngModel)]="user.FisrtName" required>
+        <label data-error="Required field!">First Name</label>
+      </div>
+      <div class="input-field col s6">
+        <input class="validate" type="text" name="LastName" #LastName="ngModel" [(ngModel)]="user.LastName" >
+        <label >Last name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input class="validate" type="text" name="typeOfMeal" #typeOfMeal="ngModel" [(ngModel)]="user.typeOfMeal">
+        <label>Type of meal</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input type="text" name="email" #email="ngModel" [(ngModel)]="user.email">
+        <label>email</label>
+      </div>
+      <div class="input-field col s6">
+        <input type="text" name="countryCode" #countryCode="ngModel" [(ngModel)]="user.countryCode">
+        <label>country code</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input type="text" name="number" #number="ngModel" [(ngModel)]="user.number">
+        <label>Number</label>
+      </div>
+      <div class="input-field col s6">
+        <input type="text" name="users_userId"  #users_userId="ngModel" [(ngModel)]="user.users_userId" >
+          <label>Number</label>
+        </div>
+     
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <button class="btn-large btn-submit" type="submit">Submit</button>
+        <button type="submit" ng-disabled="isDisabled" 
+            ng-click="save()">Submit Your Data</button>
+      </div>
+    </div>
+  </form>
+  </div>
+  <div>
+   
